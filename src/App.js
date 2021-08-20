@@ -4,9 +4,12 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import About from "./pages/About/About";
+import AxiosDemoRCC from "./pages/AxiosDemo/AxiosDemoRCC";
+import AxiosDemoRFC from "./pages/AxiosDemo/AxiosDemoRFC";
 import Header from "./component/HomePage/Header";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import ReduxHookDemo from "./pages/Hook/ReduxHookDemo/ReduxHookDemo";
 import Register from "./pages/Register/Register";
 import UseEffectDemo from "./pages/Hook/UseEffectDemo/UseEffectDemo";
 import UseStateDemo from "./pages/Hook/UseStateDemo/UseStateDemo";
@@ -39,7 +42,11 @@ function App() {
 				<Route exact path="/about" component={About}></Route>	
 				<Route exact path="/useEffect" component={UseEffectDemo}></Route>
 				<Route exact path="/useState" component={UseStateDemo}></Route>
+				<Route exact path="/reudxHook" component={ReduxHookDemo}></Route>
+				<Route exact path="/ajaxrcc" component={AxiosDemoRCC}></Route>
+				<Route exact path="/ajaxrfc" component={AxiosDemoRFC}></Route>
 				<Route exact path="/" component={Home}></Route>
+
 			</Switch>
 			{/* khi người dùng rỏ search nó sẻ hển thị component tương ướng nếu có nhiều trường hợp tương ứng nó sẻ hiện     
       nhiề trường hợp đó nếu kong6 muốn có thể dùng switch và thêm exact=(so sánh chính sát)*/}

@@ -83,10 +83,40 @@ export default function Header(props) {
 							</a>
 							<div className="dropdown-menu" aria-labelledby="dropdownId">
 								<NavLink exact className="dropdown-item" to="/useState">
-									Use State
+									Use State Hook
 								</NavLink>
 								<NavLink exact className="dropdown-item" to="/useEffect">
-									Use Effect
+									Use Effect Hook
+								</NavLink>
+								<NavLink exact className="dropdown-item" to="/reudxHook">
+									Use Redux Hook
+								</NavLink>
+								<NavLink exact className="dropdown-item" to="/ajaxrcc">
+									Axios React Class RCC
+								</NavLink>
+								<NavLink exact className="dropdown-item" to="/ajaxrfc">
+								Axios React Function RFC
+								</NavLink>
+							</div>
+						</li>
+						<li className="nav-item dropdown">
+							<a
+								className="nav-link dropdown-toggle"
+								to="#"
+								id="dropdownIdAxios"
+								data-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								Axios
+							</a>
+							<div className="dropdown-menu" aria-labelledby="dropdownIdAxios">
+								
+								<NavLink exact className="dropdown-item" to="/ajaxrcc">
+									Axios React Class RCC
+								</NavLink>
+								<NavLink exact className="dropdown-item" to="/ajaxrfc">
+								Axios React Function RFC
 								</NavLink>
 							</div>
 						</li>
