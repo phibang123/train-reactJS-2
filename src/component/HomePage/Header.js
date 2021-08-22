@@ -54,6 +54,16 @@ export default function Header(props) {
 								exact
 								activeClassName="active"
 								className="nav-link"
+								to="/profile"
+							>
+								Profile
+							</NavLink>
+						</li>
+						<li className="nav-item">
+							<NavLink
+								exact
+								activeClassName="active"
+								className="nav-link"
 								to="/login" /*to ghi đúng với cái path bên app.js*/
 							>
 								Login <span className="sr-only">(current)</span>
@@ -67,6 +77,16 @@ export default function Header(props) {
 								to="/register" /*to ghi đúng với cái path bên app.js*/
 							>
 								Register <span className="sr-only">(current)</span>
+							</NavLink>
+						</li>
+						<li className="nav-item">
+							<NavLink
+								exact
+								activeClassName="active"
+								className="nav-link"
+								to="/hoc" /*to ghi đúng với cái path bên app.js*/
+							>
+								HOC (Higher order Component) <span className="sr-only">(current)</span>
 							</NavLink>
 						</li>
 
@@ -97,6 +117,7 @@ export default function Header(props) {
 								<NavLink exact className="dropdown-item" to="/ajaxrfc">
 								Axios React Function RFC
 								</NavLink>
+								
 							</div>
 						</li>
 						<li className="nav-item dropdown">
@@ -117,6 +138,9 @@ export default function Header(props) {
 								</NavLink>
 								<NavLink exact className="dropdown-item" to="/ajaxrfc">
 								Axios React Function RFC
+								</NavLink>
+								<NavLink exact className="dropdown-item" to="/ajaxmiddleware">
+								Axios React Middle Ware
 								</NavLink>
 							</div>
 						</li>
