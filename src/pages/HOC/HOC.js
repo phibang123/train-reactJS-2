@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import Login from "../Login/Login";
 import Modal from "./Modal";
 import Regisger from "../Register/Register";
+import { useDispatch } from "react-redux";
 
 export default function HOC()
 {
-    const [component,setComponent] =useState(<Login></Login>)
-    
+    // const [component,setComponent] =useState(<Login></Login>)
+     
+	const dispatch = useDispatch();
+
+
 	return (
 		<div className="container align-center">
 			<button
@@ -16,7 +20,14 @@ export default function HOC()
                 className="btn btn-outline-primary mr-2"
                 onClick={() =>
                 {
-                    setComponent(<Login></Login>)
+					dispatch({
+						type: 'OPEN_LOGIN',
+						Component: <Login></Login>,
+						handleSubmit: () =>
+						{		
+							alert('sử lý đăng nhập!')
+						}
+					})
                 }}
 			>
 				Login
@@ -25,16 +36,17 @@ export default function HOC()
 				data-toggle="modal"
 				data-target="#modelId"
                 className="btn btn-outline-danger  mr-2"
-                onClick={() =>
-                {
-                    setComponent(<Regisger/>)
-                }}
+                // onClick={() =>
+                // {
+                //     setComponent(<Regisger/>)
+                // }}
 			>
 				Regisger
 			</button>
 
             {/* <Modal component={<button className='btn btn-primary'>ahihi</button>}></Modal> */}
-            <Modal component={component}></Modal>
+			<Modal ></Modal>
+			{/* <Modal com={component}></Modal> */}
 		</div>
 	);
 }

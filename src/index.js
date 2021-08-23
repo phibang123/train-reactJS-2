@@ -1,4 +1,5 @@
 import './index.scss';
+import 'antd/dist/antd.css';
 
 import App from './App';
 import { Provider } from 'react-redux';
@@ -6,6 +7,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import {store} from './redux/configStore'
+
+//Import css
+
+
 
 ReactDOM.render(
   <Provider store={store}>

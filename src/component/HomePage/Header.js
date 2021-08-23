@@ -64,6 +64,16 @@ export default function Header(props) {
 								exact
 								activeClassName="active"
 								className="nav-link"
+								to="/admin/antd"
+							>
+								Ant Design
+							</NavLink>
+						</li>
+						<li className="nav-item">
+							<NavLink
+								exact
+								activeClassName="active"
+								className="nav-link"
 								to="/login" /*to ghi đúng với cái path bên app.js*/
 							>
 								Login <span className="sr-only">(current)</span>

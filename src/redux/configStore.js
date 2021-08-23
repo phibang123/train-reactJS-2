@@ -1,6 +1,7 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 
 import { FakeBookReducer } from './Reducers/FakeBookReducer'
+import { ModelReducer } from './Reducers/ModelReducer'
 import { PhimReducer } from './Reducers/PhimReducer'
 import thunk from "redux-thunk"
 
@@ -15,7 +16,8 @@ import thunk from "redux-thunk"
 
 const rootReducer = combineReducers({
     FakeBookReducer,
-    PhimReducer
+    PhimReducer,
+    ModelReducer
 })
 
 export const store = createStore(rootReducer,applyMiddleware(thunk))
