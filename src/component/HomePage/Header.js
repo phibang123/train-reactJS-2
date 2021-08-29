@@ -1,8 +1,34 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
+import { useSelector } from "react-redux";
 
 //rfc
 export default function Header(props) {
+	const {userLogin} = useSelector(state=>state.QuanLyNguoiDungReducer);
+
+	const renderLogin = () => {
+		if (userLogin !== null) {
+			return <NavLink
+					exact
+					activeClassName="active"
+					className="nav-link"
+					to="/profile" /*to ghi đúng với cái path bên app.js*/
+				>
+					Hello!{userLogin.taiKhoan} <span className="sr-only">(current)</span>
+				</NavLink>
+		
+		} else {
+			return <NavLink
+					exact
+					activeClassName="active"
+					className="nav-link"
+					to="/login" /*to ghi đúng với cái path bên app.js*/
+				>
+					Login <span className="sr-only">(current)</span>
+				</NavLink>
+			
+		}
+	};
 	return (
 		<div>
 			{/* NavLink giống thẻ a nó sẻ thay đổi bên trong switch tức nó chỉ thay đổi bên trong switch chứ không thay đổi hết trang 
@@ -69,16 +95,7 @@ export default function Header(props) {
 								Ant Design
 							</NavLink>
 						</li>
-						<li className="nav-item">
-							<NavLink
-								exact
-								activeClassName="active"
-								className="nav-link"
-								to="/login" /*to ghi đúng với cái path bên app.js*/
-							>
-								Login <span className="sr-only">(current)</span>
-							</NavLink>
-						</li>
+						<li className="nav-item">{renderLogin()}</li>
 						<li className="nav-item">
 							<NavLink
 								exact
@@ -96,7 +113,8 @@ export default function Header(props) {
 								className="nav-link"
 								to="/hoc" /*to ghi đúng với cái path bên app.js*/
 							>
-								HOC (Higher order Component) <span className="sr-only">(current)</span>
+								HOC (Higher order Component){" "}
+								<span className="sr-only">(current)</span>
 							</NavLink>
 						</li>
 
@@ -125,9 +143,8 @@ export default function Header(props) {
 									Axios React Class RCC
 								</NavLink>
 								<NavLink exact className="dropdown-item" to="/ajaxrfc">
-								Axios React Function RFC
+									Axios React Function RFC
 								</NavLink>
-								
 							</div>
 						</li>
 						<li className="nav-item dropdown">
@@ -142,15 +159,14 @@ export default function Header(props) {
 								Axios
 							</a>
 							<div className="dropdown-menu" aria-labelledby="dropdownIdAxios">
-								
 								<NavLink exact className="dropdown-item" to="/ajaxrcc">
 									Axios React Class RCC
 								</NavLink>
 								<NavLink exact className="dropdown-item" to="/ajaxrfc">
-								Axios React Function RFC
+									Axios React Function RFC
 								</NavLink>
 								<NavLink exact className="dropdown-item" to="/ajaxmiddleware">
-								Axios React Middle Ware
+									Axios React Middle Ware
 								</NavLink>
 							</div>
 						</li>

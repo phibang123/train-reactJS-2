@@ -1,7 +1,7 @@
 import "./App.css";
 
 //cấu hình router
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 
 import About from "./pages/About/About";
 import { AdminTemplate } from "./templates/AdminTemplate";
@@ -21,12 +21,15 @@ import Register from "./pages/Register/Register";
 import UseEffectDemo from "./pages/Hook/UseEffectDemo/UseEffectDemo";
 import UseStateDemo from "./pages/Hook/UseStateDemo/UseStateDemo";
 import { UserTemplate } from "./templates/UserTemplate";
+//thư viện giúp chuyển hướng trang
+import { createBrowserHistory } from 'history'
 import logo from "./logo.svg";
 
+export const history = createBrowserHistory()
 function App() {
 	return (
-		<BrowserRouter>
-			{/* BrowserRouter giúp cho chúng ta luân chuyển các router */}
+		<Router history={history}>
+			{/* BrowserRouter giúp cho chúng ta luân chuyển các route */}
 			{/* <Header></Header> */}
 			<Switch>
 				<HomeTemplate path='/home' component={Home}></HomeTemplate>
@@ -74,7 +77,7 @@ function App() {
 			</Switch>
 			{/* khi người dùng rỏ search nó sẻ hển thị component tương ướng nếu có nhiều trường hợp tương ứng nó sẻ hiện     
       nhiề trường hợp đó nếu kong6 muốn có thể dùng switch và thêm exact=(so sánh chính sát)*/}
-		</BrowserRouter>
+		</Router>
 	);
 }
 

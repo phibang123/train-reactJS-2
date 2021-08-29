@@ -40,6 +40,17 @@ export default function HOC()
                 // {
                 //     setComponent(<Regisger/>)
                 // }}
+				onClick={() =>
+					{
+						dispatch({
+							type: 'OPEN_LOGIN',
+							Component: <Regisger></Regisger>,
+							handleSubmit: () =>
+							{		
+								alert('sử lý đăng nhập!')
+							}
+						})
+					}}
 			>
 				Regisger
 			</button>
